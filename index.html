@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container grid-container">
+        <header>
+            <h1>My Responsive Website</h1>
+            <p>A simple layout using Grid and Flexbox</p>
+        </header>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h2>Main Content Area</h2>
+            <p>
+                This section contains the primary content of the page. The main layout is controlled by **CSS Grid**, which places this area, the sidebar, header, and footer.
+            </p>
+            <h3>Content Cards (Flexbox)</h3>
+            <div class="content-cards">
+                <div class="card">
+                    <h4>Card One</h4>
+                    <p>This card is part of a Flexbox container. On larger screens, the cards are arranged in a row.</p>
+                </div>
+                <div class="card">
+                    <h4>Card Two</h4>
+                    <p>Flexbox allows these cards to be equally spaced and wrap to the next line on smaller screens.</p>
+                </div>
+                <div class="card">
+                    <h4>Card Three</h4>
+                    <p>As the screen size changes, the Flexbox items will adjust their size and position automatically.</p>
+                </div>
+            </div>
+        </main>
+
+        <aside>
+            <h2>Sidebar</h2>
+            <p>
+                This sidebar area is positioned using **CSS Grid**. It provides supplementary information to the main content. On mobile, it appears below the main content.
+            </p>
+        </aside>
+
+        <footer>
+            <p>&copy; 2024 Responsive Layout. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
