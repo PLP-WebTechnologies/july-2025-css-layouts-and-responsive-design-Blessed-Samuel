@@ -1,0 +1,167 @@
+        /*
+        CSS Reset and Base Styles and variables for reusability.
+        */
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #388E3C;
+            --background-color: #f0f4f8;
+            --text-color: #333;
+            --light-text-color: #fff;
+            --accent-color: #FFC107;
+            --card-bg: #fff;
+            --border-color: #e0e0e0;
+            --padding-base: 1rem;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--padding-base);
+        }
+
+        /*
+        CSS Grid Layout for Main Page Structure
+        */
+        .grid-container {
+            display: grid;
+            gap: 1.5rem;
+            grid-template-areas:
+                "header"
+                "nav"
+                "main"
+                "sidebar"
+                "footer";
+        }
+
+        header {
+            grid-area: header;
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        nav {
+            grid-area: nav;
+            background-color: var(--secondary-color);
+            padding: 0.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        main {
+            grid-area: main;
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        aside {
+            grid-area: sidebar;
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: var(--text-color);
+            color: var(--light-text-color);
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        /*
+        Flexbox Layout for Navigation and Content Cards
+        */
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--light-text-color);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            display: block;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: var(--primary-color);
+        }
+
+        .content-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--background-color);
+            border: 1px solid var(--border-color);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            flex: 1 1 100%; /* Default to full width on small screens */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        /*
+        Media Queries for Responsiveness
+        */
+
+        /* Tablet Layout (600px and up) */
+        @media (min-width: 600px) {
+            .grid-container {
+                grid-template-columns: 2fr 1fr;
+                grid-template-areas:
+                    "header header"
+                    "nav nav"
+                    "main sidebar"
+                    "footer footer";
+            }
+            .nav-links {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+
+        /* Desktop Layout (900px and up) */
+        @media (min-width: 900px) {
+            .grid-container {
+                grid-template-columns: 200px 1fr 300px;
+                grid-template-areas:
+                    "header header header"
+                    "nav nav nav"
+                    ". main sidebar"
+                    "footer footer footer";
+            }
+            .content-cards {
+                flex-wrap: nowrap;
+            }
+        }
